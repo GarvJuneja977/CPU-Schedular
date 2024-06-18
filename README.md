@@ -21,3 +21,28 @@ The program takes the number of processes and their respective arrival times, bu
 
   - Processes are scheduled based on their priority.
   - Non-preemptive scheduling.
+
+## Getting Started
+### Prerequisites
+To compile and run this program, you need a C++ compiler. If you don't have one installed, you can use GCC, which is commonly available on Unix-like systems.
+- 1.) Clone the Repository:
+  ```
+  git clone https://github.com/GarvJuneja977/CPU-Schedular.git
+  cd CPU-Schedular 
+- 2.) Compile the Program:
+  ```
+  g++ main-program.cpp -o main-program
+- 3.) Run the Program:
+  ```
+  ./main-program
+- 4.) Input:
+
+  - The program will prompt you to enter the number of processes.
+  - For each process, input the arrival time, burst time, and priority.
+  - For Round Robin, input the time quantum.
+- 5.) Output:
+
+  - The program will display the waiting time and turnaround time for each process under each scheduling algorithm.
+  - It will also print the average waiting time for each algorithm.
+  - Finally, it will print the most efficient algorithm based on the minimum average waiting time.
+## 
