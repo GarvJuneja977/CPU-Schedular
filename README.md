@@ -45,4 +45,3 @@ To compile and run this program, you need a C++ compiler. If you don't have one 
   - The program will display the waiting time and turnaround time for each process under each scheduling algorithm.
   - It will also print the average waiting time for each algorithm.
   - Finally, it will print the most efficient algorithm based on the minimum average waiting time.
-## 
