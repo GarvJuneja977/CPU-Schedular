@@ -1,3 +1,9 @@
+# CPU Scheduling
+- CPU scheduling is a fundamental concept in operating systems that determines which process in the ready queue is to be allocated the CPU for execution. The main goal of CPU scheduling is to optimize CPU utilization and system responsiveness. Efficient CPU scheduling can significantly improve the performance of the system.
+
+![2024-06-20 (10)](https://github.com/GarvJuneja977/CPU-Schedular/assets/172182458/afae7bd7-27f4-4258-9dd7-90024ccf4b45)
+
+
 # Process Scheduling Simulator
 This project is a Process Scheduling Simulator written in C++. It implements various CPU scheduling algorithms, including First-Come, First-Serve (FCFS), Shortest Remaining Time First (SRTF), Priority Scheduling, and Round Robin (RR). The simulator can automatically choose the most suitable algorithm based on the burst times of the processes.
 
@@ -7,6 +13,9 @@ This project is a Process Scheduling Simulator written in C++. It implements var
 - Priority Scheduling: Processes with higher priority are executed first.
 - Round Robin (RR): Each process is assigned a fixed time slot in a cyclic order.
 - Auto Schedule: Automatically chooses the most suitable algorithm based on the standard deviation of burst times.
+
+![2024-06-20 (9)](https://github.com/GarvJuneja977/CPU-Schedular/assets/172182458/cb112cbe-4fe3-423c-acd4-c54fc79a7a51)
+
 
 
 ## Getting Started
@@ -33,6 +42,7 @@ To compile and run this program, you need a C++ compiler. If you don't have one 
     - Priority: Priority Scheduling
     - RR: Round Robin
     - auto: Automatically selects the scheduling algorithm
+   
 
 # Detailed Explanation
 ## Data Structures
