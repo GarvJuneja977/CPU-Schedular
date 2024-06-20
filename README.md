@@ -1,26 +1,13 @@
-# CPU Scheduling Algorithms in C++
-This project implements four different CPU scheduling algorithms in C++: First-Come, First-Served (FCFS), Shortest Job First (SJF), Round Robin (RR), and Priority Scheduling. The code calculates and compares the average waiting time for each algorithm and determines the most efficient algorithm based on the minimum average waiting time.
+# Process Scheduling Simulator
+This project is a Process Scheduling Simulator written in C++. It implements various CPU scheduling algorithms, including First-Come, First-Serve (FCFS), Shortest Remaining Time First (SRTF), Priority Scheduling, and Round Robin (RR). The simulator can automatically choose the most suitable algorithm based on the burst times of the processes.
 
-## Description
-The program takes the number of processes and their respective arrival times, burst times, and priorities as input from the user. It then applies the four scheduling algorithms to the processes and computes the waiting time and turnaround time for each process under each algorithm. Finally, it compares the average waiting times of the algorithms and outputs the most efficient algorithm.
+## Features
+- First-Come, First-Serve (FCFS): Processes are executed in the order they arrive.
+- Shortest Remaining Time First (SRTF): The process with the shortest remaining burst time is executed next.
+- Priority Scheduling: Processes with higher priority are executed first.
+- Round Robin (RR): Each process is assigned a fixed time slot in a cyclic order.
+- Auto Schedule: Automatically chooses the most suitable algorithm based on the standard deviation of burst times.
 
-## Scheduling Algorithms
-- 1.) First-Come, First-Served (FCFS):
-
-  - Processes are scheduled in the order they arrive in the ready queue.
-  - Non-preemptive scheduling.
-- 2.) Shortest Job First (SJF):
-
-  - Processes with the shortest burst time are scheduled first.
-  - Non-preemptive scheduling.
-- 3.) Round Robin (RR):
-
-  - Each process gets executed for a fixed time quantum in a cyclic order.
-  - Preemptive scheduling.
-- 4.) Priority Scheduling:
-
-  - Processes are scheduled based on their priority.
-  - Non-preemptive scheduling.
 
 ## Getting Started
 ### Prerequisites
@@ -36,12 +23,66 @@ To compile and run this program, you need a C++ compiler. If you don't have one 
   ```
   ./main-program
 - 4.) Input:
+  - The program prompts the user to input the number of processes and details for each process:
+    - Arrival Time: The time at which the process arrives.
+    - Burst Time: The total time required by the process.
+    - The priority of the process (lower number indicates higher priority).
+  - After entering the process details, the user is prompted to select the scheduling algorithm:
+    - FCFS: First Come First Serve
+    - SRTF: Shortest Remaining Time First
+    - Priority: Priority Scheduling
+    - RR: Round Robin
+    - auto: Automatically selects the scheduling algorithm
 
-  - The program will prompt you to enter the number of processes.
-  - For each process, input the arrival time, burst time, and priority.
-  - For Round Robin, input the time quantum.
-- 5.) Output:
+# Detailed Explanation
+## Data Structures
+- Process: Represents a process with its properties.
+- GanttChartEntry: Represents an entry in the Gantt chart.
 
-  - The program will display the waiting time and turnaround time for each process under each scheduling algorithm.
-  - It will also print the average waiting time for each algorithm.
-  - Finally, it will print the most efficient algorithm based on the minimum average waiting time.
+## Functions
+- calculateTimesFCFS: Implements the FCFS scheduling algorithm.
+- calculateTimesSRTF: Implements the SRTF scheduling algorithm.
+- calculateTimesPriority: Implements the Priority Scheduling algorithm.
+- calculateTimesRR: Implements the Round Robin scheduling algorithm.
+- auto_schedule: Automatically selects the scheduling algorithm.
+- displayProcesses: Displays the details of each process after scheduling.
+- displayGanttChart: Displays the Gantt chart.
+- sorted: Sorts processes based on arrival time and priority.
+- scheduler: Main function to select and execute the scheduling algorithm
+
+# Example Usage
+## Input
+```
+Enter the number of processes: 3
+Enter arrival time, burst time, and priority for process 1: 0 5 2
+Enter arrival time, burst time, and priority for process 2: 1 3 1
+Enter arrival time, burst time, and priority for process 3: 2 8 3
+
+Select the Algorithm
+Type 'FCFS' for First Come First Serve
+Type 'SRTF' for Shortest Remaining Time First
+Type 'Priority' for Priority Scheduling
+Type 'RR' for Round Robin
+Type 'auto' for Auto Schedule
+
+Type your Algorithm : FCFS
+```
+
+## Output
+```
+PID Arrival Time Burst Time Priority Waiting Time Turnaround Time Response Time Completion Time
+1   0            5          2        0             5             0             5
+2   1            3          1        4             7             4             8
+3   2            8          3        6             14            6             16
+
+Average Waiting Time: 3.33333
+Average Turnaround Time: 8.66667
+
+Gantt Chart:
+ -------------------
+|  P1  |  P2  |  P3  |
+ -------------------
+0      5      8     16
+```
+## License
+- This project is licensed under the MIT License.
